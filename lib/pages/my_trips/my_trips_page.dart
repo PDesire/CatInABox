@@ -100,7 +100,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
                           ),
                           FlatButton(
                               onPressed: () {
-
+                                showTripStartDialog(context);
                               },
                               child: Text(
                                 "> starten",
@@ -140,7 +140,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
                           ),
                         ),
                         Text(
-                          "von Berlin nach Gransen",
+                          "von Berlin nach Gransee",
                           style: TextStyle(
                               fontSize: 20
                           ),
@@ -292,6 +292,47 @@ class _MyTripsPageState extends State<MyTripsPage> {
           ),
         ],
       ),
+    );
+  }
+
+  showTripStartDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                "Fahrt von Berlin nach Gransee",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 25),
+              ),
+              Center(
+                child: RaisedButton(
+                  color: Theme.of(context).accentColor,
+                  child: Text(
+                    "STARTEN",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }
