@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tetris_blocs/core/tetris_provider.dart';
+import 'package:zefram_cochrane/pages/create_trip/create_trip_page.dart';
 import 'package:zefram_cochrane/pages/my_trips/my_trips_page.dart';
+import 'package:zefram_cochrane/splash/splash_screen.dart';
+
+import 'login/login_bloc.dart';
+import 'login/login_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +15,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return TetrisProvider(
+        blocs: [
+        LoginBloc()
+    ],
+    child: MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -27,8 +37,15 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
-    );
+      home: SplashScreen(
+      imageAssetName: 'assets/images/logo.jpg',
+      seconds: 3,
+      navigateTo:  LoginScreen(
+          imageAssetName: 'assets/images/logo.jpg',
+          navigateTo: CreateTripPage()
+      ),
+    )
+    ));
   }
 }
 
