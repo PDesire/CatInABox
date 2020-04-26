@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:zefram_cochrane/pages/create_trip/trip_contact_widget.dart';
+import 'package:zefram_cochrane/pages/my_trips/my_trips_page.dart';
+import 'package:zefram_cochrane/pages/profile_page/profile_page.dart';
 import 'package:zefram_cochrane/ui/menu_injector/menu_injector.dart';
 
 class CreateTripPage extends StatefulWidget {
@@ -165,9 +167,11 @@ class CreateTripPageState extends State<CreateTripPage> {
     ).then((value){
       switch(value){
         case "OK":
-          //TODO: move to settings
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ProfilePage()));
+          return;
         case "CANCEL":
-          //TODO: move to my trips.
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyTripsPage()));
+        return;
       }
     });
   }
