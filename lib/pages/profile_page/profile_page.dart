@@ -39,13 +39,13 @@ class _ProfilePageState extends State<ProfilePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Level 4 User",
+                                  "Level 4 user",
                                   style: TextStyle(
                                       fontSize: 23
                                   ),
                                 ),
                                 Text(
-                                  "Dabei seit Jan. 2020",
+                                  "On board since Jan. 2020",
                                   style: TextStyle(
                                       fontSize: 23
                                   ),
@@ -54,7 +54,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   padding: EdgeInsets.symmetric(vertical: 15),
                                 ),
                                 Text(
-                                  "angebotene Fahrten",
+                                  "trips offered",
                                   style: TextStyle(
                                       fontSize: 23,
                                       fontWeight: FontWeight.bold
@@ -84,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   padding: EdgeInsets.symmetric(vertical: 8),
                                 ),
                                 Text(
-                                  "geleistete Transporte",
+                                  "provided transports",
                                   style: TextStyle(
                                       fontSize: 23,
                                       fontWeight: FontWeight.bold
@@ -127,7 +127,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Trophäen",
+                                  "Trophies",
                                   style: TextStyle(
                                       fontSize: 23,
                                       fontWeight: FontWeight.bold
@@ -203,7 +203,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                                     },
                                     child: Text(
-                                      "> Fahrten",
+                                      "> Trips",
                                       style: TextStyle(
                                         fontSize: 20,
                                         decoration: TextDecoration.underline,
@@ -252,15 +252,18 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
           SizedBox(
             height: (appBarSize < kToolbarHeight ? kToolbarHeight : appBarSize) > 90 ? (appBarSize < kToolbarHeight ? kToolbarHeight : appBarSize) : 90,
             child: AppBar(
-              backgroundColor: Colors.green,
+              backgroundColor: Theme.of(context).primaryColor,
               leading: IconButton(
-                icon: Icon(Icons.menu),
+                icon: Icon(
+                    Icons.menu,
+                    color: Colors.black
+                ),
                 onPressed: () {
                   this.drawerKey.currentState.open();
                 },
               ),
               flexibleSpace: Image(
-                image: NetworkImage('https://images.unsplash.com/photo-1582087463254-21ee1043b25d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'),
+                image: NetworkImage('https://images.unsplash.com/photo-1580558606302-50a9b010800e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'),
                 fit: BoxFit.cover,
                 width: MediaQuery.of(context).size.width,
               ),
@@ -268,7 +271,12 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
               title: Opacity(
                   opacity: hideTitleWhenExpanded ? 1.0 - percent : 1.0,
                   child: Container(
-                      child: Text("Tristan"),
+                      child: Text(
+                        "Tristan",
+                        style: TextStyle(
+                          color: Colors.black
+                        ),
+                      ),
                   )),
             ),
           ),

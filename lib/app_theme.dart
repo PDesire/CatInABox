@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
 
-  static final acColor = Colors.green;
+  static final acColor = Color(0xFFCD2653);
   static final backgroundColor = Color(0x468485);
 
   static ThemeData createTheme(){
@@ -31,7 +31,7 @@ class AppTheme {
           color: acColor
         )
       )
-        
+
 
     );
   }

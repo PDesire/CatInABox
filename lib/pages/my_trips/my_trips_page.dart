@@ -22,7 +22,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
               _drawerKey.currentState.open();
             },
           ),
-          title: Text("Meine Fahrten"),
+          title: Text("My trips"),
         ),
         body: ListView(
           shrinkWrap: true,
@@ -39,13 +39,13 @@ class _MyTripsPageState extends State<MyTripsPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "28.4.2020 : 12:00Uhr",
+                            "28.4.2020 : 12:00AM",
                             style: TextStyle(
                                 fontSize: 20
                             ),
                           ),
                           Text(
-                            "von A nach B",
+                            "from A to B",
                             style: TextStyle(
                                 fontSize: 20
                             ),
@@ -53,7 +53,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
                           Row(
                             children: <Widget>[
                               Text(
-                                "Transport für ",
+                                "Transport for ",
                                 style: TextStyle(
                                     fontSize: 20
                                 ),
@@ -82,7 +82,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
 
                                 },
                                 child: Text(
-                                  "> ändern",
+                                  "> modify",
                                   style: TextStyle(
                                     fontSize: 20,
                                     decoration: TextDecoration.underline,
@@ -95,7 +95,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
 
                                 },
                                 child: Text(
-                                  "> löschen",
+                                  "> delete",
                                   style: TextStyle(
                                     fontSize: 20,
                                     decoration: TextDecoration.underline,
@@ -108,7 +108,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
                                   showTripStartDialog(context);
                                 },
                                 child: Text(
-                                  "> starten",
+                                  "> start",
                                   style: TextStyle(
                                     fontSize: 20,
                                     decoration: TextDecoration.underline,
@@ -139,13 +139,13 @@ class _MyTripsPageState extends State<MyTripsPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "25.4.2020 : 12:00Uhr",
+                            "25.4.2020 : 12:00AM",
                             style: TextStyle(
                                 fontSize: 20
                             ),
                           ),
                           Text(
-                            "von Berlin nach Gransee",
+                            "from Berlin to Gransee",
                             style: TextStyle(
                                 fontSize: 20
                             ),
@@ -159,7 +159,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
                                 ),
                               ),
                               Text(
-                                "leer",
+                                "empty",
                                 style: TextStyle(
                                     decoration: TextDecoration.underline,
                                     fontWeight: FontWeight.bold,
@@ -182,7 +182,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
 
                                 },
                                 child: Text(
-                                  "> duplizieren",
+                                  "> duplicate",
                                   style: TextStyle(
                                     fontSize: 20,
                                     decoration: TextDecoration.underline,
@@ -195,7 +195,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
 
                                 },
                                 child: Text(
-                                  "> löschen",
+                                  "> delete",
                                   style: TextStyle(
                                     fontSize: 20,
                                     decoration: TextDecoration.underline,
@@ -223,13 +223,13 @@ class _MyTripsPageState extends State<MyTripsPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "26.4.2020 : 4:00Uhr",
+                            "26.4.2020 : 4:00PM",
                             style: TextStyle(
                                 fontSize: 20
                             ),
                           ),
                           Text(
-                            "von Bonn nach Köln",
+                            "from Bonn to Cologne",
                             style: TextStyle(
                                 fontSize: 20
                             ),
@@ -237,7 +237,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
                           Row(
                             children: <Widget>[
                               Text(
-                                "Transport für ",
+                                "Transport for ",
                                 style: TextStyle(
                                     fontSize: 20
                                 ),
@@ -266,7 +266,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
 
                                 },
                                 child: Text(
-                                  "> duplizieren",
+                                  "> duplicate",
                                   style: TextStyle(
                                     fontSize: 20,
                                     decoration: TextDecoration.underline,
@@ -279,7 +279,7 @@ class _MyTripsPageState extends State<MyTripsPage> {
 
                                 },
                                 child: Text(
-                                  "> löschen",
+                                  "> delete",
                                   style: TextStyle(
                                     fontSize: 20,
                                     decoration: TextDecoration.underline,

@@ -33,89 +33,118 @@ class CreateTripPageState extends State<CreateTripPage> {
           body:
           Container(
             child: Center(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children:[
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children:[
-                            Text("Von"),
-                            SizedBox(
-                              width: 300,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  prefixIcon: Icon(
-                                    Icons.search,
-                                    color: Colors.black,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children:[
+                        Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children:[
+                                  SizedBox(
+                                      width: 35,
+                                      child: Text(
+                                        "From",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold
+                                        ),
+                                      )
                                   ),
-                                ),
+                                  SizedBox(
+                                    width: 280,
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        prefixIcon: Icon(
+                                          Icons.search,
+                                          color: Colors.black,
+                                        ),
+                                      ),
 
-                              ),
-                            ),
-                            RaisedButton(
-                              color: Colors.green,
-                              textColor: Colors.white,
-                              child: Icon(
-                                  Icons.location_searching,
-                                  color: Colors.white
-                              ),
-                              onPressed: ()=>{},
-                            )
-                          ]),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children:[
-                            Text("Nach"),
-                            SizedBox(
-                              width: 300,
-                              child: TextField(
-
-                                  decoration: InputDecoration(
-                                    prefixIcon: Icon(
-                                      Icons.search,
-                                      color: Colors.black,
                                     ),
+                                  ),
+                                  RaisedButton(
+                                    color: Theme.of(context).accentColor,
+                                    textColor: Colors.white,
+                                    child: Icon(
+                                        Icons.location_searching,
+                                        color: Colors.white
+                                    ),
+                                    onPressed: ()=>{},
                                   )
-                              ),
-                            ),
-                            RaisedButton(
-                              color: Colors.green,
-                              textColor: Colors.white,
-                              child: Icon(
-                                  Icons.location_on,
-                                  color: Colors.white
-                              ),
-                              onPressed: ()=>{},
-                            )
+                                ]),
+                          ),
+                        ),
+                        Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children:[
+                                  SizedBox(
+                                      width: 35,
+                                      child: Text(
+                                        "To",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                      )
+                                  ),
+                                  SizedBox(
+                                    width: 280,
+                                    child: TextField(
 
-                          ]
-                      ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children:[
-                            FlatButton(
-                              child: Text("Heute"),
-                              onPressed: () => {},
+                                        decoration: InputDecoration(
+                                          prefixIcon: Icon(
+                                            Icons.search,
+                                            color: Colors.black,
+                                          ),
+                                        )
+                                    ),
+                                  ),
+                                  RaisedButton(
+                                    color: Theme.of(context).accentColor,
+                                    textColor: Colors.white,
+                                    child: Icon(
+                                        Icons.location_on,
+                                        color: Colors.white
+                                    ),
+                                    onPressed: ()=>{},
+                                  )
+
+                                ]
                             ),
-                            FlatButton(child: Text("Jetzt"),
-                                onPressed: () =>{}
-                            )
-                          ]),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            RaisedButton(
-                              color: Colors.green,
-                              textColor: Colors.white,
-                              child: Text("Fahrt einstellen"),
-                              onPressed: ()=>{
-                                _showContactDialog(context)
-                              },
-                            )
-                          ]
-                      )
-                    ]
+                          ),
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children:[
+                              FlatButton(
+                                child: Text("Today"),
+                                onPressed: () => {},
+                              ),
+                              FlatButton(child: Text("Now"),
+                                  onPressed: () =>{}
+                              )
+                            ]),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              RaisedButton(
+                                color: Theme.of(context).accentColor,
+                                textColor: Colors.white,
+                                child: Text("Offer Trip"),
+                                onPressed: ()=>{
+                                  _showContactDialog(context)
+                                },
+                              )
+                            ]
+                        )
+                      ]
+                  ),
                 )
             ),
           )

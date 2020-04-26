@@ -46,10 +46,34 @@ class MenuInjectorState extends State<MenuInjector> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 60,
+                        height: 60,
+                        child: Image.network('https://catinabox.eu/wp-content/uploads/2020/04/cropped-Katze_Symetrisch_BLACK.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 3),
+                      ),
+                      Text(
+                        "Cat In A Box",
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                ),
                 ListTile(
                   leading: Icon(
                     Feather.truck,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).accentColor,
                   ),
                   title: Text("Create a trip"),
                   onTap: () {
@@ -62,9 +86,9 @@ class MenuInjectorState extends State<MenuInjector> {
                 ListTile(
                   leading: Icon(
                     Ionicons.md_person,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).accentColor,
                   ),
-                  title: Text("My Profile"),
+                  title: Text("My profile"),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ProfilePage()));
                   },
@@ -75,7 +99,7 @@ class MenuInjectorState extends State<MenuInjector> {
                 ListTile(
                   leading: Icon(
                     FontAwesome5Solid.shipping_fast,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).accentColor,
                   ),
                   title: Text("My trips"),
                   onTap: () {

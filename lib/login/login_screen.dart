@@ -49,7 +49,7 @@ class LoginScreenState extends State<LoginScreen> {
 
     return new GestureDetector(
           child: Container(
-              color: Colors.green,
+              color: Color(0xFFCD2653),
               child: new Center(
               child: GestureDetector(
                 child:
