@@ -24,278 +24,281 @@ class _MyTripsPageState extends State<MyTripsPage> {
           ),
           title: Text("My trips"),
         ),
-        body: ListView(
-          shrinkWrap: true,
-          children: <Widget>[
-            Card(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  child: Theme(
-                    data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-                    child: ExpansionTile(
-                      title: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.0),
+          child: ListView(
+            shrinkWrap: true,
+            children: <Widget>[
+              Card(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                    child: Theme(
+                      data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                      child: ExpansionTile(
+                        title: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "28.4.2020 : 12:00AM",
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
+                            ),
+                            Text(
+                              "from A to B",
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Text(
+                                  "Transport for ",
+                                  style: TextStyle(
+                                      fontSize: 20
+                                  ),
+                                ),
+                                Text(
+                                  "yan",
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                         children: <Widget>[
-                          Text(
-                            "28.4.2020 : 12:00AM",
-                            style: TextStyle(
-                                fontSize: 20
-                            ),
-                          ),
-                          Text(
-                            "from A to B",
-                            style: TextStyle(
-                                fontSize: 20
-                            ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 5),
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Text(
-                                "Transport for ",
-                                style: TextStyle(
-                                    fontSize: 20
-                                ),
+                              FlatButton(
+                                  onPressed: () {
+
+                                  },
+                                  child: Text(
+                                    "> modify",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
                               ),
-                              Text(
-                                "yan",
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20
-                                ),
+                              FlatButton(
+                                  onPressed: () {
+
+                                  },
+                                  child: Text(
+                                    "> delete",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
+                              ),
+                              FlatButton(
+                                  onPressed: () {
+                                    showTripStartDialog(context);
+                                  },
+                                  child: Text(
+                                    "> start",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
                               ),
                             ],
                           )
                         ],
                       ),
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 5),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            FlatButton(
-                                onPressed: () {
-
-                                },
-                                child: Text(
-                                  "> modify",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                            ),
-                            FlatButton(
-                                onPressed: () {
-
-                                },
-                                child: Text(
-                                  "> delete",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                            ),
-                            FlatButton(
-                                onPressed: () {
-                                  showTripStartDialog(context);
-                                },
-                                child: Text(
-                                  "> start",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                            ),
-                          ],
-                        )
-                      ],
                     ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
-            ),
-            Card(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  child: Theme(
-                    data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-                    child: ExpansionTile(
-                      title: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+              ),
+              Card(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                    child: Theme(
+                      data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                      child: ExpansionTile(
+                        title: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "25.4.2020 : 12:00AM",
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
+                            ),
+                            Text(
+                              "from Berlin to Gransee",
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Text(
+                                  "- ",
+                                  style: TextStyle(
+                                      fontSize: 20
+                                  ),
+                                ),
+                                Text(
+                                  "empty",
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                         children: <Widget>[
-                          Text(
-                            "25.4.2020 : 12:00AM",
-                            style: TextStyle(
-                                fontSize: 20
-                            ),
-                          ),
-                          Text(
-                            "from Berlin to Gransee",
-                            style: TextStyle(
-                                fontSize: 20
-                            ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 5),
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Text(
-                                "- ",
-                                style: TextStyle(
-                                    fontSize: 20
-                                ),
+                              FlatButton(
+                                  onPressed: () {
+
+                                  },
+                                  child: Text(
+                                    "> duplicate",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
                               ),
-                              Text(
-                                "empty",
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20
-                                ),
+                              FlatButton(
+                                  onPressed: () {
+
+                                  },
+                                  child: Text(
+                                    "> delete",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
                               ),
                             ],
                           )
                         ],
                       ),
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 5),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            FlatButton(
-                                onPressed: () {
-
-                                },
-                                child: Text(
-                                  "> duplicate",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                            ),
-                            FlatButton(
-                                onPressed: () {
-
-                                },
-                                child: Text(
-                                  "> delete",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                            ),
-                          ],
-                        )
-                      ],
                     ),
                   ),
                 ),
               ),
-            ),
-            Card(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  child: Theme(
-                    data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-                    child: ExpansionTile(
-                      title: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+              Card(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                    child: Theme(
+                      data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                      child: ExpansionTile(
+                        title: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "26.4.2020 : 4:00PM",
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
+                            ),
+                            Text(
+                              "from Bonn to Cologne",
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Text(
+                                  "Transport for ",
+                                  style: TextStyle(
+                                      fontSize: 20
+                                  ),
+                                ),
+                                Text(
+                                  "gismo",
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                         children: <Widget>[
-                          Text(
-                            "26.4.2020 : 4:00PM",
-                            style: TextStyle(
-                                fontSize: 20
-                            ),
-                          ),
-                          Text(
-                            "from Bonn to Cologne",
-                            style: TextStyle(
-                                fontSize: 20
-                            ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 5),
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Text(
-                                "Transport for ",
-                                style: TextStyle(
-                                    fontSize: 20
-                                ),
+                              FlatButton(
+                                  onPressed: () {
+
+                                  },
+                                  child: Text(
+                                    "> duplicate",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
                               ),
-                              Text(
-                                "gismo",
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20
-                                ),
+                              FlatButton(
+                                  onPressed: () {
+
+                                  },
+                                  child: Text(
+                                    "> delete",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
                               ),
                             ],
                           )
                         ],
                       ),
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 5),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            FlatButton(
-                                onPressed: () {
-
-                                },
-                                child: Text(
-                                  "> duplicate",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                            ),
-                            FlatButton(
-                                onPressed: () {
-
-                                },
-                                child: Text(
-                                  "> delete",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                            ),
-                          ],
-                        )
-                      ],
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

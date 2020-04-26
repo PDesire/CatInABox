@@ -66,12 +66,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Container(
                                   decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Theme.of(context).primaryColor,
+                                        color: Theme.of(context).accentColor,
+                                        width: 2
                                       ),
                                       borderRadius: BorderRadius.all(Radius.circular(20))
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(5.0),
                                     child: Text(
                                       "360km",
                                       style: TextStyle(
@@ -96,12 +97,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Container(
                                   decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Theme.of(context).primaryColor,
+                                        color: Theme.of(context).accentColor,
+                                        width: 2
                                       ),
                                       borderRadius: BorderRadius.all(Radius.circular(20))
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(5.0),
                                     child: Text(
                                       "7.10km",
                                       style: TextStyle(

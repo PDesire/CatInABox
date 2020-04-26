@@ -136,7 +136,7 @@ class CreateTripPageState extends State<CreateTripPage> {
                               RaisedButton(
                                 color: Theme.of(context).accentColor,
                                 textColor: Colors.white,
-                                child: Text("Offer Trip"),
+                                child: Text("Offer trip"),
                                 onPressed: ()=>{
                                   _showContactDialog(context)
                                 },
