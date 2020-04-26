@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:zefram_cochrane/pages/create_trip/trip_contact_widget.dart';
 
 class CreateTripPage extends StatefulWidget {
   @override
@@ -96,7 +97,9 @@ class CreateTripPageState extends State<CreateTripPage> {
                   children: [
                     RaisedButton(
                       child: Text("Fahrt einstellen"),
-                      onPressed: ()=>{},
+                      onPressed: ()=>{
+                        _showContactDialog(context)
+                      },
                     )
                   ]
                 )
@@ -104,6 +107,19 @@ class CreateTripPageState extends State<CreateTripPage> {
             )
           ),
         )
+    );
+  }
+
+
+  _showContactDialog(BuildContext context){
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Kontaktdaten"),
+          content: TripContactWidget()
+        );
+      },
     );
   }
 
