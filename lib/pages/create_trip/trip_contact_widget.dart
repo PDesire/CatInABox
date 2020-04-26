@@ -31,23 +31,32 @@ class TripContactWidgetState extends State<TripContactWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 0,
       child: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                    "Du bietest eine Fahrt an. Wie möchtest du kontaktiert werden ?"),
+                  "You're offering a trip. How do you want to be contacted ?",
+                  textAlign: TextAlign.center,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 7),
+                ),
                 DropdownButton(
                   value: _currentContactMethod,
                   items: _dropDownMenuItems,
                   onChanged: changedDropDownItem,
                 ),
                 getTextfieldWithInputType(),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 7),
+                ),
                 RaisedButton(
-                  color: Colors.green,
+                  color: Theme.of(context).accentColor,
                   textColor: Colors.white,
-                  child: Text("auswählen"),
+                  child: Text("Select"),
                   onPressed: (){
                     widget.onContactSelected(_currentContactMethod, _contactData);
 

@@ -49,15 +49,20 @@ class LoginScreenState extends State<LoginScreen> {
 
     return new GestureDetector(
           child: Container(
-              color: Color(0xFFCD2653),
+              color: Theme.of(context).canvasColor,
               child: new Center(
               child: GestureDetector(
-                child:
-
-                  Column(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.asset(widget.imageAssetName),
-
+                    SizedBox(
+                        width: 90,
+                        height: 90,
+                        child: Image.network(widget.imageAssetName)
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5.0),
+                    ),
                     TetrisBuilder(
                       blocs: [loginBloc],
                       builder: (BuildContext context, TetrisEvent event){

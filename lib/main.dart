@@ -40,10 +40,10 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SplashScreen(
-      imageAssetName: 'assets/images/logo.jpg',
+      imageAssetName: 'https://catinabox.eu/wp-content/uploads/2020/04/cropped-Katze_Symetrisch_BLACK.png',
       seconds: 3,
       navigateTo:  LoginScreen(
-          imageAssetName: 'assets/images/logo.jpg',
+          imageAssetName: 'https://catinabox.eu/wp-content/uploads/2020/04/cropped-Katze_Symetrisch_BLACK.png',
           navigateTo: CreateTripPage()
       ),
     )

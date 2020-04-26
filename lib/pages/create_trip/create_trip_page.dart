@@ -55,7 +55,7 @@ class CreateTripPageState extends State<CreateTripPage> {
                                       )
                                   ),
                                   SizedBox(
-                                    width: 280,
+                                    width: MediaQuery.of(context).size.width * 0.58,
                                     child: TextField(
                                       decoration: InputDecoration(
                                         prefixIcon: Icon(
@@ -94,7 +94,7 @@ class CreateTripPageState extends State<CreateTripPage> {
                                       )
                                   ),
                                   SizedBox(
-                                    width: 280,
+                                    width: MediaQuery.of(context).size.width * 0.58,
                                     child: TextField(
 
                                         decoration: InputDecoration(
@@ -159,9 +159,12 @@ class CreateTripPageState extends State<CreateTripPage> {
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: Text("Kontaktdaten"),
-          content: TripContactWidget(
-            onContactSelected: onContactSelected,
+          title: Text("Contact details"),
+          content: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.40,
+            child: TripContactWidget(
+              onContactSelected: onContactSelected,
+            ),
           )
         );
       },
@@ -179,18 +182,28 @@ class CreateTripPageState extends State<CreateTripPage> {
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: Text('Daten speichern'),
+          title: Text('Save contact details'),
           content: const Text(
-              'Möchtest du deine Kontaktdaten in den Einstellungen speichern ?'),
+              'Do you want to save your contact details in the settings ?'),
           actions: <Widget>[
             FlatButton(
-              child: const Text('Nein, danke.'),
+              child: Text(
+                'No, thanks.',
+                style: TextStyle(
+                    color: Theme.of(context).accentColor
+                ),
+              ),
               onPressed: () {
                 Navigator.of(context).pop("CANCEL");
               },
             ),
             FlatButton(
-              child: const Text('Ja'),
+              child: Text(
+                'Yes',
+                style: TextStyle(
+                  color: Theme.of(context).accentColor
+                ),
+              ),
               onPressed: () {
                 Navigator.of(context).pop("OK");
               },
