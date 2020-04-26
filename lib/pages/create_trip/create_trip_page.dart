@@ -45,7 +45,6 @@ class CreateTripPageState extends State<CreateTripPage> {
                               width: 300,
                               child: TextField(
                                 decoration: InputDecoration(
-                                  border: InputBorder.none,
                                   prefixIcon: Icon(
                                     Icons.search,
                                     color: Colors.black,
@@ -55,9 +54,11 @@ class CreateTripPageState extends State<CreateTripPage> {
                               ),
                             ),
                             RaisedButton(
+                              color: Colors.green,
+                              textColor: Colors.white,
                               child: Icon(
                                   Icons.location_searching,
-                                  color: Colors.black
+                                  color: Colors.white
                               ),
                               onPressed: ()=>{},
                             )
@@ -79,9 +80,11 @@ class CreateTripPageState extends State<CreateTripPage> {
                               ),
                             ),
                             RaisedButton(
+                              color: Colors.green,
+                              textColor: Colors.white,
                               child: Icon(
                                   Icons.location_on,
-                                  color: Colors.black
+                                  color: Colors.white
                               ),
                               onPressed: ()=>{},
                             )
@@ -103,6 +106,8 @@ class CreateTripPageState extends State<CreateTripPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             RaisedButton(
+                              color: Colors.green,
+                              textColor: Colors.white,
                               child: Text("Fahrt einstellen"),
                               onPressed: ()=>{
                                 _showContactDialog(context)

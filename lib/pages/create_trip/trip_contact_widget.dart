@@ -45,6 +45,8 @@ class TripContactWidgetState extends State<TripContactWidget> {
                 ),
                 getTextfieldWithInputType(),
                 RaisedButton(
+                  color: Colors.green,
+                  textColor: Colors.white,
                   child: Text("auswählen"),
                   onPressed: (){
                     widget.onContactSelected(_currentContactMethod, _contactData);
