@@ -16,100 +16,103 @@ class CreateTripPageState extends State<CreateTripPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              _drawerKey.currentState.open();
-            },
+    return MenuInjector(
+      key: _drawerKey,
+      child: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                _drawerKey.currentState.open();
+              },
+            ),
+            title: Text("Create Trip"),
           ),
-          title: Text("Create Trip"),
-        ),
-        body:
-        Container(
-          child: Center(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children:[
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children:[
-                          Text("Von"),
-                          SizedBox(
-                            width: 300,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: Icon(
-                                  Icons.search,
-                                  color: Colors.black,
-                                ),
-                              ),
-
-                            ),
-                          ),
-                          RaisedButton(
-                            child: Icon(
-                                Icons.location_searching,
-                                color: Colors.black
-                            ),
-                            onPressed: ()=>{},
-                          )
-                        ]),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children:[
-                          Text("Nach"),
-                          SizedBox(
-                            width: 300,
-                            child: TextField(
-
+          body:
+          Container(
+            child: Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children:[
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children:[
+                            Text("Von"),
+                            SizedBox(
+                              width: 300,
+                              child: TextField(
                                 decoration: InputDecoration(
+                                  border: InputBorder.none,
                                   prefixIcon: Icon(
                                     Icons.search,
                                     color: Colors.black,
                                   ),
-                                )
-                            ),
-                          ),
-                          RaisedButton(
-                            child: Icon(
-                                Icons.location_on,
-                                color: Colors.black
-                            ),
-                            onPressed: ()=>{},
-                          )
+                                ),
 
-                        ]
-                    ),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children:[
-                          FlatButton(
-                            child: Text("Heute"),
-                            onPressed: () => {},
-                          ),
-                          FlatButton(child: Text("Jetzt"),
-                              onPressed: () =>{}
-                          )
-                        ]),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          RaisedButton(
-                            child: Text("Fahrt einstellen"),
-                            onPressed: ()=>{
-                              _showContactDialog(context)
-                            },
-                          )
-                        ]
-                    )
-                  ]
-              )
-          ),
-        )
+                              ),
+                            ),
+                            RaisedButton(
+                              child: Icon(
+                                  Icons.location_searching,
+                                  color: Colors.black
+                              ),
+                              onPressed: ()=>{},
+                            )
+                          ]),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children:[
+                            Text("Nach"),
+                            SizedBox(
+                              width: 300,
+                              child: TextField(
+
+                                  decoration: InputDecoration(
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      color: Colors.black,
+                                    ),
+                                  )
+                              ),
+                            ),
+                            RaisedButton(
+                              child: Icon(
+                                  Icons.location_on,
+                                  color: Colors.black
+                              ),
+                              onPressed: ()=>{},
+                            )
+
+                          ]
+                      ),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children:[
+                            FlatButton(
+                              child: Text("Heute"),
+                              onPressed: () => {},
+                            ),
+                            FlatButton(child: Text("Jetzt"),
+                                onPressed: () =>{}
+                            )
+                          ]),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            RaisedButton(
+                              child: Text("Fahrt einstellen"),
+                              onPressed: ()=>{
+                                _showContactDialog(context)
+                              },
+                            )
+                          ]
+                      )
+                    ]
+                )
+            ),
+          )
+      ),
     );
   }
 
