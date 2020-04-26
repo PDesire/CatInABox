@@ -48,7 +48,7 @@ class CreateTripPageState extends State<CreateTripPage> {
                   ),
                       RaisedButton(
                         child: Icon(
-                          Icons.search,
+                          Icons.location_searching,
                           color: Colors.black
                         ),
                         onPressed: ()=>{},
