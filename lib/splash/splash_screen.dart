@@ -5,12 +5,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tetris_blocs/core/tetris_builder.dart';
-import 'package:tetris_blocs/core/tetris_event.dart';
 import 'package:tetris_blocs/core/tetris_provider.dart';
 import 'package:zefram_cochrane/login/login_bloc.dart';
-
-import '../app_theme.dart';
 
 class SplashScreen extends StatefulWidget {
   final int seconds;
@@ -44,26 +40,32 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     LoginBloc loginBloc = TetrisProvider.of<LoginBloc>(context);
+    return new Scaffold(
+      body: _buildSplash(context)
+    );
+  }
+
+  _buildSplash(BuildContext context){
 
     return new GestureDetector(
-          child: Container(
-              //color: AppTheme.backgroundColor,
-              child: new Center(
+      child: Container(
+          color: Colors.green,
+          child: new Center(
               child: GestureDetector(
-                child:
+                  child:
 
                   Column(
-                  children: <Widget>[
-                    Image.asset(widget.imageAssetName),
+                      children: <Widget>[
+                        Image.asset(widget.imageAssetName),
 
 
-                ])
-                 , onTap: () =>_navigate()
+                      ])
+                  , onTap: () =>_navigate()
               )
-              )
+          )
 
-        ),
-        );
+      ),
+    );
   }
 
   _navigate() {

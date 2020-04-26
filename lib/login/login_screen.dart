@@ -40,11 +40,16 @@ class LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return new Scaffold(
+      body:buildPage(context)
+    );
+  }
+  Widget buildPage(BuildContext context) {
     LoginBloc loginBloc = TetrisProvider.of<LoginBloc>(context);
 
     return new GestureDetector(
           child: Container(
-             // color: AppTheme.backgroundColor,
+              color: Colors.green,
               child: new Center(
               child: GestureDetector(
                 child:
