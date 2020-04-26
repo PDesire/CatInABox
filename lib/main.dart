@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tetris_blocs/core/tetris_provider.dart';
 import 'package:zefram_cochrane/pages/create_trip/create_trip_page.dart';
 import 'package:zefram_cochrane/pages/my_trips/my_trips_page.dart';
+import 'package:zefram_cochrane/pages/profile_page/profile_page.dart';
 import 'package:zefram_cochrane/splash/splash_screen.dart';
 
 import 'login/login_bloc.dart';

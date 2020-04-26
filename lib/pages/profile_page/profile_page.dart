@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zefram_cochrane/ui/menu_injector/menu_injector.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -6,214 +7,221 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
+  GlobalKey<MenuInjectorState> _drawerKey = new GlobalKey<MenuInjectorState>();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverPersistentHeader(
-            pinned: true,
-            floating: false,
-            delegate: CustomSliverDelegate(
-              expandedHeight: 150,
-            ),
-          ),
-          SliverPadding(
-            padding: EdgeInsets.all(16.0),
-            sliver: SliverList(
-              delegate: SliverChildListDelegate(
-                  [
-                    Card(
-                      child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                "Level 4 User",
-                                style: TextStyle(
-                                    fontSize: 23
-                                ),
-                              ),
-                              Text(
-                                "Dabei seit Jan. 2020",
-                                style: TextStyle(
-                                    fontSize: 23
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 15),
-                              ),
-                              Text(
-                                "angebotene Fahrten",
-                                style: TextStyle(
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 3),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Theme.of(context).primaryColor,
-                                    ),
-                                    borderRadius: BorderRadius.all(Radius.circular(20))
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: Text(
-                                    "360km",
-                                    style: TextStyle(
-                                        fontSize: 23
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 8),
-                              ),
-                              Text(
-                                "geleistete Transporte",
-                                style: TextStyle(
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 3),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Theme.of(context).primaryColor,
-                                    ),
-                                    borderRadius: BorderRadius.all(Radius.circular(20))
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: Text(
-                                    "7.10km",
-                                    style: TextStyle(
-                                        fontSize: 23
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 5),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Card(
-                      child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                "Trophäen",
-                                style: TextStyle(
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 8),
-                              ),
-                              Container(
-                                  width: MediaQuery.of(context).size.width * 0.95,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        child: CircleAvatar(
-                                          backgroundImage: NetworkImage('https://img.favpng.com/4/1/22/lollipop-candy-png-favpng-PwguN6C1DEQL6QfjXWmCNefRq.jpg'),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 4),
-                                      ),
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        child: CircleAvatar(
-                                          backgroundImage: NetworkImage('https://img.favpng.com/18/5/0/club-penguin-lollipop-candy-corn-png-favpng-qXB4nPMeZAJeLz17ecDD1iJ0G.jpg'),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 4),
-                                      ),
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        child: CircleAvatar(
-                                          backgroundImage: NetworkImage('https://img.favpng.com/21/6/6/gummi-candy-gummy-bear-gelatin-dessert-jelly-bean-icon-png-favpng-cEm9bbSCXr4syDDLUNj1jCiam.jpg'),
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Card(
-                      child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              FlatButton(
-                                  onPressed: () {
-
-                                  },
-                                  child: Text(
-                                    "> Reviews",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  )
-                              ),
-                              FlatButton(
-                                  onPressed: () {
-
-                                  },
-                                  child: Text(
-                                    "> Fahrten",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  )
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ]
+    return MenuInjector(
+      key: _drawerKey,
+      child: Scaffold(
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverPersistentHeader(
+              pinned: true,
+              floating: false,
+              delegate: CustomSliverDelegate(
+                expandedHeight: 250,
+                drawerKey: _drawerKey
               ),
             ),
-          )
-        ],
+            SliverPadding(
+              padding: EdgeInsets.all(16.0),
+              sliver: SliverList(
+                delegate: SliverChildListDelegate(
+                    [
+                      Card(
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Level 4 User",
+                                  style: TextStyle(
+                                      fontSize: 23
+                                  ),
+                                ),
+                                Text(
+                                  "Dabei seit Jan. 2020",
+                                  style: TextStyle(
+                                      fontSize: 23
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 15),
+                                ),
+                                Text(
+                                  "angebotene Fahrten",
+                                  style: TextStyle(
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 3),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                      borderRadius: BorderRadius.all(Radius.circular(20))
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Text(
+                                      "360km",
+                                      style: TextStyle(
+                                          fontSize: 23
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                ),
+                                Text(
+                                  "geleistete Transporte",
+                                  style: TextStyle(
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 3),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                      borderRadius: BorderRadius.all(Radius.circular(20))
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Text(
+                                      "7.10km",
+                                      style: TextStyle(
+                                          fontSize: 23
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Trophäen",
+                                  style: TextStyle(
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                ),
+                                Container(
+                                    width: MediaQuery.of(context).size.width * 0.95,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Container(
+                                          width: 60.0,
+                                          height: 60.0,
+                                          child: CircleAvatar(
+                                            backgroundImage: NetworkImage('https://img.favpng.com/4/1/22/lollipop-candy-png-favpng-PwguN6C1DEQL6QfjXWmCNefRq.jpg'),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 4),
+                                        ),
+                                        Container(
+                                          width: 60.0,
+                                          height: 60.0,
+                                          child: CircleAvatar(
+                                            backgroundImage: NetworkImage('https://img.favpng.com/18/5/0/club-penguin-lollipop-candy-corn-png-favpng-qXB4nPMeZAJeLz17ecDD1iJ0G.jpg'),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 4),
+                                        ),
+                                        Container(
+                                          width: 60.0,
+                                          height: 60.0,
+                                          child: CircleAvatar(
+                                            backgroundImage: NetworkImage('https://img.favpng.com/21/6/6/gummi-candy-gummy-bear-gelatin-dessert-jelly-bean-icon-png-favpng-cEm9bbSCXr4syDDLUNj1jCiam.jpg'),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                FlatButton(
+                                    onPressed: () {
+
+                                    },
+                                    child: Text(
+                                      "> Reviews",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        decoration: TextDecoration.underline,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )
+                                ),
+                                FlatButton(
+                                    onPressed: () {
+
+                                    },
+                                    child: Text(
+                                      "> Fahrten",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        decoration: TextDecoration.underline,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -222,10 +230,12 @@ class _ProfilePageState extends State<ProfilePage> {
 class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
   final double expandedHeight;
   final bool hideTitleWhenExpanded;
+  final GlobalKey<MenuInjectorState> drawerKey;
 
   CustomSliverDelegate({
     @required this.expandedHeight,
     this.hideTitleWhenExpanded = true,
+    this.drawerKey,
   });
 
   @override
@@ -245,12 +255,21 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
               backgroundColor: Colors.green,
               leading: IconButton(
                 icon: Icon(Icons.menu),
-                onPressed: () {},
+                onPressed: () {
+                  this.drawerKey.currentState.open();
+                },
+              ),
+              flexibleSpace: Image(
+                image: NetworkImage('https://images.unsplash.com/photo-1582087463254-21ee1043b25d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'),
+                fit: BoxFit.cover,
+                width: MediaQuery.of(context).size.width,
               ),
               elevation: 0.0,
               title: Opacity(
                   opacity: hideTitleWhenExpanded ? 1.0 - percent : 1.0,
-                  child: Text("Rosemary")),
+                  child: Container(
+                      child: Text("Tristan"),
+                  )),
             ),
           ),
           Positioned(
@@ -265,13 +284,27 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.9,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          "Rosemary",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Tristan",
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          decoration: BoxDecoration(
+                              color: Theme.of(context).canvasColor,
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                                width: 3
+                              ),
+                              borderRadius: BorderRadius.all(Radius.circular(20))
                           ),
                         ),
                         Padding(
@@ -281,7 +314,7 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
                           width: 60.0,
                           height: 60.0,
                           child: CircleAvatar(
-                            backgroundImage: NetworkImage('https://img.favpng.com/21/6/6/gummi-candy-gummy-bear-gelatin-dessert-jelly-bean-icon-png-favpng-cEm9bbSCXr4syDDLUNj1jCiam.jpg'),
+                            backgroundImage: NetworkImage('https://us-central1-iconscout-1539.cloudfunctions.net/download?name=Avatar&download=1&url=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Ffree%2Fpng-256%2F456332.png&width=256&height=256'),
                           ),
                         ),
                       ],
