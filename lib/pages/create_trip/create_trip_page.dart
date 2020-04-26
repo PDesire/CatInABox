@@ -114,13 +114,56 @@ class CreateTripPageState extends State<CreateTripPage> {
   _showContactDialog(BuildContext context){
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
           title: Text("Kontaktdaten"),
-          content: TripContactWidget()
+          content: TripContactWidget(
+            onContactSelected: onContactSelected,
+          )
         );
       },
-    );
+    ).then((value){
+      _showContactSaveToProfileDialog(context);
+    });
+  }
+
+  onContactSelected(String contactMethod, String contactData){
+    Navigator.of(context).pop();
+  }
+  _showContactSaveToProfileDialog(BuildContext context){
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Daten speichern'),
+          content: const Text(
+              'Möchtest du deine Kontaktdaten in den Einstellungen speichern ?'),
+          actions: <Widget>[
+            FlatButton(
+              child: const Text('Nein, danke.'),
+              onPressed: () {
+                Navigator.of(context).pop("CANCEL");
+              },
+            ),
+            FlatButton(
+              child: const Text('Ja'),
+              onPressed: () {
+                Navigator.of(context).pop("OK");
+              },
+            )
+          ],
+        );
+      },
+    ).then((value){
+      switch(value){
+        case "OK":
+          //TODO: move to settings
+        case "CANCEL":
+          //TODO: move to my trips.
+      }
+    });
   }
 
 }

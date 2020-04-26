@@ -4,32 +4,40 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class TripContactWidget extends StatefulWidget {
+  TripContactMethodCallback onContactSelected;
+
+  TripContactWidget({this.onContactSelected}):
+      assert (onContactSelected != null);
+
   @override
   State<StatefulWidget> createState() => TripContactWidgetState();
 
 }
 
-class TripContactWidgetState extends State<TripContactWidget>{
+class TripContactWidgetState extends State<TripContactWidget> {
   List<DropdownMenuItem<String>> _dropDownMenuItems;
   String _currentContactMethod;
+  String _contactData;
 
 
   @override
   void initState() {
     _dropDownMenuItems = getDropDownMenuItems();
     _currentContactMethod = _dropDownMenuItems[0].value;
+    _contactData ="";
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-   return Card(
-     child: Center(
+    return Card(
+      child: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("Du bietest eine Fahrt an. Wie möchtest du kontaktiert werden ?"),
+                Text(
+                    "Du bietest eine Fahrt an. Wie möchtest du kontaktiert werden ?"),
                 DropdownButton(
                   value: _currentContactMethod,
                   items: _dropDownMenuItems,
@@ -38,14 +46,15 @@ class TripContactWidgetState extends State<TripContactWidget>{
                 getTextfieldWithInputType(),
                 RaisedButton(
                   child: Text("auswählen"),
-                  onPressed: ()=>{
-                    Navigator.of(context).pop()
+                  onPressed: (){
+                    widget.onContactSelected(_currentContactMethod, _contactData);
+
                   },
                 )
               ]
           )
       ),
-   );
+    );
   }
 
   void changedDropDownItem(String selectedValue) {
@@ -53,6 +62,13 @@ class TripContactWidgetState extends State<TripContactWidget>{
       _currentContactMethod = selectedValue;
     });
   }
+
+  void changedContactData(String contactData) {
+    setState(() {
+      _contactData = contactData;
+    });
+  }
+
 
 
   List<DropdownMenuItem<String>> getDropDownMenuItems() {
@@ -77,17 +93,22 @@ class TripContactWidgetState extends State<TripContactWidget>{
       case "phone":
         return TextField(
           keyboardType: TextInputType.phone,
+          onChanged: changedContactData,
         );
 
       case "whatsapp":
         return TextField(
           keyboardType: TextInputType.phone,
+          onChanged: changedContactData,
         );
       case "email":
         return TextField(
           keyboardType: TextInputType.emailAddress,
+          onChanged: changedContactData,
         );
     }
   }
 
 }
+
+typedef TripContactMethodCallback = void Function(String contactMethod, String contactData);
