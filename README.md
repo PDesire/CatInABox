@@ -1,4 +1,4 @@
-# cat in the box
+# cat in a box
 
 Let's create the app in Warp speed !!!
 
